@@ -1,13 +1,11 @@
-export async function fetchHeader(){
-    try{
-        // let response = await fetch("../db/header.json");
-        const url = '../db/header.json';
-        let response =  fetch(url);
-        console.log("response : ",response);
-        return response;
-        
-    } catch(err){
+export async function fetchHeader() {
+    try {
+        const url = 'assets/db/header.json';
+        const response = await fetch(url);
+        const header = await response.json();
+        console.log("header : ", header);
+        return header;
+    } catch (err) {
         alert(err);
     }
-    
 }

@@ -1,8 +1,19 @@
 .header {
-    background-color: #fff;
-    height: 75px;
+    background-color: #000000;
     padding: 10px;
     color: blue;
+    display: flex;
+  }
+  .header > a{
+    flex: 1;
+    flex-wrap: wrap;
+  }
+  .header > a > span{
+    display: inline-block;
+    color: white;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
   }
   .title {
     font-size: 1.5em;

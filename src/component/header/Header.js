@@ -1,37 +1,26 @@
 import React, { Component } from 'react';
+import { fetchHeader } from '../../model/header';
 import './Header.css';
-// import {fetchHeader} from '../../model/header';
 
 class Header extends Component {
-  constructor(){
+  constructor() {
     super();
-    this.state = {
-            logo: "",
-            title:""
-    }
+    this.state = { logo: "", title: "" }
   }
   render() {
     return (
-        <div className="header">
-          <img src={this.state.logo} className="logo" alt="menu" />
-          <h1 className="title">{this.state.title}</h1>
-        </div>
+      <div className="header">
+        <a href="/" className="logo"><img src={this.state.logo} className="logo" alt="logo" /></a>
+        <a href="/contact"><span>Contact Us</span></a>
+      </div>
     );
   }
-  componentDidMount(){
-    this.fetchHeader();
+  componentDidMount() {
+    let Promise = fetchHeader();
+    Promise.then(data => {
+      this.setState(data);
+    });
   }
-  fetchHeader = async() => {
-    try{
-        const url = 'assets/db/header.json';
-        let response =  await fetch(url);
-        console.log("response : ",response);
-        let header = await response.json();
-        this.setState(header);
-    } catch(err){
-        alert(err);
-    }
-}
 }
 
 export default Header;
