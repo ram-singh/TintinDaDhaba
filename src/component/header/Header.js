@@ -5,13 +5,20 @@ import './Header.css';
 class Header extends Component {
   constructor() {
     super();
-    this.state = { logo: "", title: "" }
+    this.state = { logo: "", title: "", dhabaimages: []}
   }
   render() {
+    // let dhabaPics = <img src={this.state.logo}  alt="Dhaba Images" />;
     return (
       <div className="header">
-        <a href="/" className="logo"><img src={this.state.logo} className="logo" alt="logo" /></a>
-        <a href="/contact"><span>Contact Us</span></a>
+        <div className="logo"><img src={this.state.logo}  alt="logo" /></div>
+        <div className="dhabaPics">
+            {this.state.dhabaimages.map(function(name, index){
+                return <img src={'assets/images/' + name}  key={index} alt="Dhaba Images" />;
+            })}
+        </div>
+        <div> <embed className="menu" src="assets/images/menu.pdf"/> </div>
+        {/* <a href="/contact"><span>Contact Us</span></a> */}
       </div>
     );
   }
