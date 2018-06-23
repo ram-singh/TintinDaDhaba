@@ -5,7 +5,7 @@ class Home extends Component {
   render() {
     return (
         <div>
-            <h3>Site is under construction.......</h3>
+            <h4 className="text-danger">Site is under construction.......</h4>
         </div>
     );
   }

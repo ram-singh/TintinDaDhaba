@@ -8,16 +8,15 @@ class Header extends Component {
     this.state = { logo: "", title: "", dhabaimages: []}
   }
   render() {
-    // let dhabaPics = <img src={this.state.logo}  alt="Dhaba Images" />;
     return (
-      <div className="header">
-        <div className="logo"><img src={this.state.logo}  alt="logo" /></div>
-        <div className="dhabaPics">
+      <div className="header row">
+        <div className="logo"><img className="col-xs-12" src={this.state.logo}  alt="logo" /></div>
+        <div className="dhabaPics col-xs-12">
             {this.state.dhabaimages.map(function(name, index){
-                return <img src={'assets/images/' + name}  key={index} alt="Dhaba Images" />;
+                return <img className="col-xs-4 col-sm-4 col-md-4" src={'assets/images/' + name}  key={index} alt="Dhaba Images" />;
             })}
         </div>
-        <div> <embed className="menu" src="assets/images/menu.pdf"/> </div>
+        <div> <embed className="menu col-md-12" src="assets/images/menu.pdf"/> </div>
         {/* <a href="/contact"><span>Contact Us</span></a> */}
       </div>
     );
