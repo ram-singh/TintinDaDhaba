@@ -17,6 +17,13 @@
     border-radius: 50%;
     height: 200px;
   }
+  @media only screen and (max-width: 768px) {
+    .dhabaPics > img{
+      flex:1;
+      border-radius: 50%;
+      height: 150px;
+    }
+}
   .menu{
     margin-top: 50px;
     width: 100%;
